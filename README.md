@@ -15,7 +15,7 @@ Mohon untuk mempersiapkan beberapa Requirement environment untuk menjalankan apl
 - ketikkan <b>"docker-compose up --build -d"</b> (arahkan dulu terminal/cmd ke folder aplikasi laravelnya ya! pakai cd cd itu lho)
 - kemudian ketikkan <b>"composer install"</b> untuk mendownload dependency pihak ketiga keempat dst
 - setelah itu ketikkan <b>"cp .env.example .env"</b> untuk melakukan duplikasi/copy file .env
-- dan yang terakhir meskipun bukan akhir dari pelatihan ini adalah ketik <b>"php artisan key:generate"</b> untuk generate key laravel<br/>terminal akan memberikan response "Application key set successfully." dan selamat anda telah lulus!
+- dan yang terakhir meskipun bukan akhir dari pelatihan ini adalah ketik <b>"php artisan key:generate"</b> untuk generate key laravel<br/>terminal/cmd akan memberikan response "Application key set successfully." dan selamat anda telah lulus!
 - pergi ke browser ketikkan url:<b>localhost</b> dan lihat apa yang terjadi :D
 
 ## Sponsors
