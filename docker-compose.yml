@@ -29,6 +29,26 @@ services:
     networks:
       - bssn
 
+# Hilangkan tanda # jika mau mengaktifkan mysql database
+#  mysql:
+#    image: mysql:latest
+#    container_name: mysql
+#    restart: unless-stopped
+#    tty: true
+#    ports:
+#      - "3306:3306"
+#    volumes:
+#      - ./container/mysql:/var/lib/mysql
+#    environment:
+#      MYSQL_DATABASE: homestead
+#      MYSQL_USER: homestead
+#      MYSQL_PASSWORD: secret
+#      MYSQL_ROOT_PASSWORD: secret
+#      SERVICE_TAGS: dev
+#      SERVICE_NAME: mysql
+#    networks:
+#      - bssn
+
 networks:
   bssn:
     driver: bridge
