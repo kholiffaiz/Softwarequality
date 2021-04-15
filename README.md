@@ -11,8 +11,7 @@ Mohon untuk mempersiapkan beberapa Requirement environment untuk menjalankan apl
 
 ## Manjalankan aplikasi
 
-- Pastikan docker telah terinstall terlebih dahulu, untuk mengeceknya bisa melalui terminal pulo gebang.. 
-- mksdnya buka terminal/cmd cek installasi docker "docker -v".. 
+- Pastikan docker telah terinstall terlebih dahulu, untuk mengeceknya bisa melalui terminal pulo gebang.. mksdnya buka terminal/cmd cek installasi docker "docker -v".. 
 - kalo ada balasan berarti docker sudah berjalan dan terinstall, kalo tidak ada balasan yaa jangan berharap.. (T.T) 
 - ketikkan "docker-compose up --build -d" (arahkan dulu terminal/cmd ke folder aplikasi laravelnya ya!)
 - pergi ke browser ketikkan url:localhost dan lihat apa yang terjadi :D
