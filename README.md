@@ -6,13 +6,13 @@ Mohon untuk mempersiapkan beberapa Requirement environment untuk menjalankan apl
 - [Docker](https://www.docker.com/products/docker-desktop). :white_check_mark:
 - [Composer](https://getcomposer.org/download/). :white_check_mark:
 - IDE masing-masing (kalo sudah jago bisa pake notepad :muscle:)<br/>=> sublime, atom, vs code, phpstorm dkk (cari di google :computer:)
-- Jaringan Internet (kalo gak punya inet bisa hub halo.tiittttttt). :bowtie:
+- Jaringan Internet (kalo gak punya inet bisa hub halo.tiittttttt). :innocent:
 - Iman dan taqwa apalagi bulan puasaan gan!! :warning:
 
 ## Manjalankan aplikasi
 
 - Pastikan docker telah terinstall terlebih dahulu, untuk mengeceknya bisa melalui terminal pulo gebang..<br/> mksdnya buka terminal/cmd ketikkan <b>"docker -v"</b>.. <br/>kalo ada balasan berarti docker sudah berjalan dan terinstall, kalo tidak ada balasan yaa jangan berharap.. :sob: 
-- ketikkan <b>"docker-compose up --build -d"</b> (arahkan dulu terminal/cmd ke folder aplikasi laravelnya ya! pakai cd cd itu lho:kissing_smiling_eyes:)
+- ketikkan <b>"docker-compose up --build -d"</b> (arahkan dulu terminal/cmd ke folder aplikasi laravelnya ya! pakai cd cd itu lho :kissing_smiling_eyes:)
 - kemudian ketikkan <b>"composer install"</b> untuk mendownload dependency pihak ketiga keempat dst
 - setelah itu ketikkan <b>"cp .env.example .env"</b> untuk melakukan duplikasi/copy file .env
 - dan yang terakhir meskipun bukan akhir dari pelatihan ini adalah ketik <b>"php artisan key:generate"</b> untuk generate key laravel<br/>terminal/cmd akan memberikan response "Application key set successfully." dan selamat anda telah lulus! :tada::tada:
