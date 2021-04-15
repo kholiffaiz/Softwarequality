@@ -3,12 +3,13 @@ version: '3'
 services:
   php:
     build:
-      context: ./
+      context: ./container
       dockerfile: php.dockerfile
-    container_name: apps
-    working_dir: /var/www/data
+    container_name: apps_php
     volumes:
-      - ./data:/var/www/data/
+      - .:/var/www
+      - ./container/local.ini:/usr/local/etc/php/conf.d/local.ini
+    working_dir: /var/www
     networks:
       - bssn
 
@@ -22,8 +23,9 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./data:/var/www/data
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - .:/var/www
+      - ./container/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./container/server/:/var/log/nginx/
     networks:
       - bssn
 
