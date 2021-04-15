@@ -5,7 +5,7 @@ Mohon untuk mempersiapkan beberapa Requirement environment untuk menjalankan apl
 
 - [Docker](https://www.docker.com/products/docker-desktop).
 - [Composer](https://getcomposer.org/download/).
-- IDE masing-masing (kalo sudah jago bisa pake notepad :D) => sublime, atom, vs code, phpstorm dkk
+- IDE masing-masing (kalo sudah jago bisa pake notepad :D)<br/>=> sublime, atom, vs code, phpstorm dkk (cari di google)
 - Jaringan Internet (kalo gak punya inet bisa hub halo.tiittttttt).
 - Iman dan taqwa apalagi bulan puasaan gan!!
 
