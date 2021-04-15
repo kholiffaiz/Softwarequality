@@ -57,7 +57,7 @@
 <h3 align="center">
     <a href="https://pusdiklat.bssn.go.id/v1/">
         <font face="Lato" color="#000">GET STARTED</font>
-    </a>&nbsp;&nbsp;&nbsp;&nbsp;
+    </a>
 </h3>
 <p align="center"><progress style="" value="0" max="10" id="progressBar"></progress></p>
 </body>
