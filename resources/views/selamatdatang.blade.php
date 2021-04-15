@@ -4,26 +4,31 @@
     <meta charset="utf-8">
     <meta http-equiv="refresh" content="10; url=http://localhost/laravel" />
     <title>
-        beautiful and simple website using html only -- fullywrold web tutorials
+        Selamat datang
     </title>
     <style>
         progress {
-            align-content: center;
             border-radius: 7px;
             height: 22px;
-            box-shadow: 1px 1px 4px rgba( 0, 0, 0, 0.2 );
+            box-shadow: 1px 1px 4px rgb(0, 48, 255);
         }
         progress::-webkit-progress-bar {
-            background-color: yellow;
+            background-color: #ffffff;
             border-radius: 7px;
         }
         progress::-webkit-progress-value {
-            background-color: blue;
+            background-color: #000000;
             border-radius: 7px;
-            box-shadow: 1px 1px 5px 3px rgba( 255, 0, 0, 0.8 );
+            box-shadow: 1px 1px 5px 3px rgb(0, 47, 255);
         }
         progress::-moz-progress-bar {
             /* style rules */
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            height: 20px;
+            width: 100%;
         }
     </style>
     <script>
@@ -61,4 +66,5 @@
 </h3>
 <p align="center"><progress style="" value="0" max="10" id="progressBar"></progress></p>
 </body>
+<footer class="footer">Created by Septian EN</footer>
 </html>
