@@ -11,6 +11,8 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+    public $isAdmin;
+    public $name;
     /**
      * The attributes that are mass assignable.
      *
@@ -40,4 +42,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function setIsAdmin(bool $isAdmin)
+    {
+        $this->isAdmin = $isAdmin;
+    }
+
+    public function setName(string $name)
+    {
+        $this->name = $name;
+    }
 }
