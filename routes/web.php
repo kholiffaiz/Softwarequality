@@ -14,9 +14,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('selamatdatang');
+    return view('welcome');
 });
 
-Route::get('/laravel', function () {
-    return view('welcome');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::resource(
+        'tweet',
+        \App\Http\Controllers\TweetController::class
+    )->except(['create']);
+
+    Route::resource(
+        'tweet/{tweet}/comment',
+        \App\Http\Controllers\TweetCommentController::class
+    )->except(['index', 'create', 'show']);
 });
