@@ -18,14 +18,6 @@ class Reservation extends Model
 
     public function cancelledBy(User $user): bool
     {
-        if ($user->isAdmin) {
-            return true;
-        }
-
-        if ($this->madeBy == $user->name) {
-            return true;
-        }
-
-        return false;
+        return $user->isAdmin || $this->madeBy === $user->name;
     }
 }

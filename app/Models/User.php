@@ -12,7 +12,7 @@ class User extends Authenticatable
     use HasFactory, Notifiable;
 
     public $isAdmin;
-    public $name;
+    public $name = 'taylor';
     /**
      * The attributes that are mass assignable.
      *
