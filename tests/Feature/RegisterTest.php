@@ -24,8 +24,8 @@ class RegisterTest extends TestCase
     public function user_can_register()
     {
         $response = $this->post('/register', [
-            'name' => 'Amirul',
-            'email' => 'amirul@kawankoding.com',
+            'name' => 'Kholif',
+            'email' => 'kholif.faiz@gmail.com',
             'password' => '12345678',
             'password_confirmation' => '12345678',
         ]);
