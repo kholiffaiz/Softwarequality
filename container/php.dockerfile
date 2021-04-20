@@ -36,6 +36,15 @@ RUN docker-php-ext-install pdo
 RUN docker-php-ext-install tokenizer
 RUN docker-php-ext-install xml
 
+# Install Node (with NPM), and Yarn (via package manager for Debian)
+#
+# https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions
+RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
+RUN apt-get update \
+ && apt-get install -y \
+ nodejs
+RUN npm install --global yarn
+
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
