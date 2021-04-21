@@ -92,7 +92,7 @@ class TweetTest extends TestCase
     }
 
     /** @test */
-    public function a_tweet_owner_can_not_edit_their_tweet()
+    public function a_tweet_owner_can_not_edit_other_user_tweet()
     {
         $otherUser = User::factory()->create();
 
@@ -101,40 +101,27 @@ class TweetTest extends TestCase
 
         $response->assertStatus(403);
     }    
-
-    /** @test */
-    public function a_tweet_owner_can_not_edit_other_user_tweet()
-    {
-        $otherUser = User::factory()->create();
-
-        $this->actingAs($otherUser);
-        $response = $this->get( uri: '/tweet/' . $this->tweet->id . '/edit');
-
-        $response->assertStatus(403);
-    }    
     
     /** @test */
     public function a_tweet_owner_can_update_their_tweet()
     {
- 
         $this->actingAs($this->user);
 
         $this->assertDatabaseHas('tweets', [
-
-            'user_id' => $this->user->id,
-            'content' => $this->tweet->content,
+           'user_id' => $this->user->id,
+           'content' => $this->tweet->content,
         ]);
-
+        
         $response = $this->put('/tweet/' . $this->tweet->id, [
-
-            'content' => 'Tweet yang sudah diupdate'
+            'content' => $tweet = 'Tweet yang sudah diupdate'
         ]);
 
         $this->assertDatabaseHas('tweets', [
-            'user-id' => $this->user->id,
-            'content' => 'Tweet yang sudah diupdate',
+           'user_id' => $this->user->id,
+           'content' => $tweet,
         ]);
-    } 
+    }
+
 
     /** @test */
     public function a_tweet_owner_can_delete_their_tweet()
@@ -148,4 +135,30 @@ class TweetTest extends TestCase
             'id' => $this->tweet->id,
         ]);
     }
+
+   /** @test */
+   public function a_user_can_not_update_other_user_tweet()
+   {
+       $otherUser = User::factory()->create();
+
+       $this->actingAs($otherUser);
+       $response = $this->put('/tweet/' . $this->tweet->id, [
+           'content' => 'coba update tweet orang lain'
+       ]);
+
+       $response->assertStatus(403);
+   }
+
+    /** @test */
+    public function an_authenticated_user_can_see_detail_tweet_page()
+    {
+        $this->actingAs($this->user);
+
+        $response = $this->get('/tweet/' . $this->tweet->id);
+
+        $response->assertSuccessful();
+        $response->assertSeeText($this->tweet->content);
+    }
+
+
 }
