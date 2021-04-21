@@ -64,4 +64,6 @@ class TweetTest extends TestCase
         $response->assertSuccessful();
         $response->assertSeeText($tweet->content);
     }
+
+    
 }
