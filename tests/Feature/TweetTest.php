@@ -103,6 +103,40 @@ class TweetTest extends TestCase
     }    
 
     /** @test */
+    public function a_tweet_owner_can_not_edit_other_user_tweet()
+    {
+        $otherUser = User::factory()->create();
+
+        $this->actingAs($otherUser);
+        $response = $this->get( uri: '/tweet/' . $this->tweet->id . '/edit');
+
+        $response->assertStatus(403);
+    }    
+    
+    /** @test */
+    public function a_tweet_owner_can_update_their_tweet()
+    {
+ 
+        $this->actingAs($this->user);
+
+        $this->assertDatabaseHas('tweets', [
+
+            'user_id' => $this->user->id,
+            'content' => $this->tweet->content,
+        ]);
+
+        $response = $this->put('/tweet/' . $this->tweet->id, [
+
+            'content' => 'Tweet yang sudah diupdate'
+        ]);
+
+        $this->assertDatabaseHas('tweets', [
+            'user-id' => $this->user->id,
+            'content' => 'Tweet yang sudah diupdate',
+        ]);
+    } 
+
+    /** @test */
     public function a_tweet_owner_can_delete_their_tweet()
     {
         $user = User::factory()->create();
