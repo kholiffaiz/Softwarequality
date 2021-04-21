@@ -107,11 +107,8 @@ class TweetTest extends TestCase
     {
         $user = User::factory()->create();
         $this->actingAs($user);
-        $tweet = Tweet::factory()->create([
-            'user_id' => $this->user->id,
-        ]);
 
-        $response = $this->delete('/tweet/' . $tweet->id);
+        $response = $this->delete('/tweet/' . $this->tweet->id);
 
         $this->assertDeleted('tweets', [
             'id' => $this->tweet->id,
