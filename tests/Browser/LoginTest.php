@@ -21,10 +21,10 @@ class LoginTest extends DuskTestCase
             // syaratnya di db harus ada data user
             $user = User::factory()->create();
             $browser->visit('/login')
-            ->type('email', $user->email)
-            ->type('password', 'password')
-            ->press('LOG IN')
-            ->assertPathIs('/tweet');
+                    ->type('email', $user->email)
+                    ->type('password', 'password')
+                    ->press('LOG IN')
+                    ->assertPathIs('/tweet');
 
         });
     }

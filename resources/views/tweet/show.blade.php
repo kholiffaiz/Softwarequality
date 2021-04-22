@@ -44,7 +44,7 @@
                             <form action="{{ route('comment.destroy', [$tweet, $comment]) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <x-jet-button type="submit" class="bg-red-500 hover:bg-red-600">Delete</x-jet-button>
+                                <x-jet-button type="submit" class="bg-red-500 hover:bg-red-600" id="delete-comment-{{$comment->id}}">Delete</x-jet-button>
                             </form>
                         </div>
                     </div>
