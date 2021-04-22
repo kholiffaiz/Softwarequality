@@ -9,9 +9,8 @@ use Tests\DuskTestCase;
 class TweetTest extends DuskTestCase
 {
     use DatabaseMigrations;
+
     /**
-     * A Dusk test example.
-     *
      * @test
      * @group tweet
      */
@@ -23,4 +22,35 @@ class TweetTest extends DuskTestCase
                     ->assertSee('LOG IN');
     });
     }
+
+    /**
+     * @test
+     * @group tweet-comment
+     */
+    public function user_can_not_post_comment_on_a_tweet()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->LoginAs($this->user)
+                    ->visit( url: '/tweet/' . $this->tweet->id)
+                    ->type( field: 'content', value: '')
+                    ->press( button: 'REPLY')
+                    ->assertSee(text: 'The content field is required');
+    });
+    }
+
+    /**
+     * @test
+     * @group tweet-comment
+     */
+    public function user_can_post_comment_on_a_tweet()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->LoginAs($this->user)
+                    ->visit( url: '/tweet/' . $this->tweet->id)
+                    ->type( field: 'content', value: 'Komentar pada tweet')
+                    ->press( button: 'REPLY')
+                    ->assertSee(text: 'Komentar pada tweet');
+    });
+    }
+
 }
