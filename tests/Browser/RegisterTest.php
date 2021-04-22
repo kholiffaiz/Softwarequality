@@ -13,6 +13,7 @@ class RegisterTest extends DuskTestCase
      * A Dusk test example.
      *
      * @test
+     * @group register
      */
     public function user_can_register()
     {
