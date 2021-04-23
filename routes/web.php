@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('mail', \App\Http\Controllers\MailController::class);
+Route::post('upload', \App\Http\Controllers\UploadFileController::class);
+
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
